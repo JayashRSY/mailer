@@ -11,8 +11,6 @@ build/
 # Ignore any generated or compiled files
 *.log
 *.pid
-*.lock
-*.json
 
 # Ignore npm debug log
 npm-debug.log*
