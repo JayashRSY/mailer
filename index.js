@@ -14,6 +14,9 @@ app.use(cors());
 app.get('/', async (req, res) => {
     res.send('Hello, World!');
 });
+app.get('/contact', async (req, res) => {
+    res.send('Contact form is working!');
+});
 app.post('/contact', async (req, res) => {
     try {
         const { name, emailId, subject, message } = req.body;
