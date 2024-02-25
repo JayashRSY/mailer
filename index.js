@@ -19,21 +19,21 @@ app.get('/contact', async (req, res) => {
 });
 app.post('/contact', async (req, res) => {
     try {
-        const { name, emailId, subject, message } = req.body;
+        const { name, email, subject, message } = req.body;
 
         const transporter = nodemailer.createTransport({
             service: 'Gmail',
             auth: {
-                user: process.env.emailId,
-                pass: process.env.password
+                user: process.env.EMAIL,
+                pass: process.env.PASSWORD
             }
         });
 
         const mailOptions = {
-            from: process.env.emailId,
+            from: process.env.EMAIL,
             to: 'jayash.work@gmail.com',
             subject: subject,
-            text: `New Contact Form Submission\n\nName: ${name}\nEmail: ${emailId}\nMessage: ${message}` // Body of the email
+            text: `New Contact Form Submission\n\nName: ${name}\nEmail: ${email}\nMessage: ${message}` // Body of the email
         };
 
         transporter.sendMail(mailOptions, (error, info) => {
